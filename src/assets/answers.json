@@ -1,0 +1,84 @@
+[
+    {
+        "id": 1,
+        "score": 10000,
+        "answer": "Cool",
+        "tip": {
+            "img": "👊",
+            "text": "It's the adjective I'd use to describe you."
+        }
+    },
+    {
+        "id": 2,
+        "score": 9000,
+        "answer": "Grimpoteuthidae",
+        "tip": {
+            "img": "🐙",
+            "text": "The scientific name of your weirdo lil guy you use as Discord username. (let's see if you can type it in one try >:))"
+        }
+    },
+    {
+        "id": 3,
+        "score": 8000,
+        "answer": "Funger",
+        "tip": {
+            "img": "💀🍽",
+            "text": "The short version of the name of the community you've joined this year."
+        }
+    },
+    {
+        "id": 4,
+        "score": 7000,
+        "answer": "Noibat",
+        "tip": {
+            "img": "🦇",
+            "text": "Your Pokémon self."
+        }
+    },
+    {
+        "id": 5,
+        "score": 6000,
+        "answer": "Fluttershy",
+        "tip": {
+            "img": "🐎🦇",
+            "text": "The pony you drew that changed my brain chemistry."
+        },
+        "alternatives": [
+            "Flutterbat"
+        ]
+    },
+    {
+        "id": 6,
+        "score": 5000,
+        "answer": "Neeko",
+        "tip": {
+            "img": "🦎",
+            "text": "She is best decision !"
+        }
+    },
+    {
+        "id": 7,
+        "score": 4000,
+        "answer": "Basil",
+        "tip": {
+            "img": "🍉",
+            "text": "Your fruity boy from a hit indie game."
+        },
+        "alternatives": [
+            "Bagel"
+        ]
+    },
+    {
+        "id": 8,
+        "score": 3000,
+        "answer": "Hextech",
+        "tip": {
+            "img": "🐱",
+            "text": "The silly kitty currently in your location."
+        },
+        "aftercheck": {
+            "condition": "citro",
+            "message": "No ! I knew you'd do that ! >:["
+        }
+    }
+]
