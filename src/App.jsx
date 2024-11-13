@@ -6,6 +6,11 @@ import Reward from '../components/Reward';
 import rawAnswersData from './assets/answers.json';
 import Score from '../components/Score';
 
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
+
+import "@sweetalert2/theme-dark/dark.css"
+
 function App() {
   const goalScore = 20000;
   const [answersData, setAnswersData] = useState(rawAnswersData);
@@ -17,7 +22,17 @@ function App() {
       .toLowerCase()
     ;
 
-    console.log(answersData);
+    if (
+      window.aftercheck
+      && window.aftercheck.condition.trim().toLowerCase() === searchValue
+    ) {
+      withReactContent(Swal).fire({
+        title: '>:[',
+        html: `<strong>${window.aftercheck.message}</strong>`,
+    });
+    }
+    delete window.aftercheck;
+
     let updatedAnswersData = Array.from(answersData);
     updatedAnswersData.map((answer) => {
       if (answer.found) {
