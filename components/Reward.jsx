@@ -1,12 +1,12 @@
 const Reward = ({currentScore, goalScore}) => {
     if (goalScore > currentScore) {
-        return;
+        return (
+            <button disabled>Not available yet ! You need {goalScore - currentScore} more points !</button>
+        );
     }
 
     return (
-        <div className="reward">
-            
-        </div>
+        <button>Get reward !!</button>
     )
 };
 

@@ -68,7 +68,7 @@ function App() {
       <Score score={currentScore} goalScore={goalScore} />
       <Form formSubmitHandler={formSubmitHandler} />
       <Answers answers={answersData} />
-      <Reward currentScore={{currentScore}} goalScore={{goalScore}} />
+      <Reward currentScore={currentScore} goalScore={goalScore} />
     </main>
   )
 }
