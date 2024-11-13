@@ -6,7 +6,8 @@
         "tip": {
             "img": "👊",
             "text": "It's the adjective I'd use to describe you."
-        }
+        },
+        "found": false
     },
     {
         "id": 2,
@@ -15,7 +16,8 @@
         "tip": {
             "img": "🐙",
             "text": "The scientific name of your weirdo lil guy you use as Discord username. (let's see if you can type it in one try >:))"
-        }
+        },
+        "found": false
     },
     {
         "id": 3,
@@ -24,7 +26,8 @@
         "tip": {
             "img": "💀🍽",
             "text": "The short version of the name of the community you've joined this year."
-        }
+        },
+        "found": false
     },
     {
         "id": 4,
@@ -33,7 +36,8 @@
         "tip": {
             "img": "🦇",
             "text": "Your Pokémon self."
-        }
+        },
+        "found": false
     },
     {
         "id": 5,
@@ -45,7 +49,8 @@
         },
         "alternatives": [
             "Flutterbat"
-        ]
+        ],
+        "found": false
     },
     {
         "id": 6,
@@ -54,7 +59,8 @@
         "tip": {
             "img": "🦎",
             "text": "She is best decision !"
-        }
+        },
+        "found": false
     },
     {
         "id": 7,
@@ -66,7 +72,8 @@
         },
         "alternatives": [
             "Bagel"
-        ]
+        ],
+        "found": false
     },
     {
         "id": 8,
@@ -79,6 +86,7 @@
         "aftercheck": {
             "condition": "citro",
             "message": "No ! I knew you'd do that ! >:["
-        }
+        },
+        "found": false
     }
 ]
