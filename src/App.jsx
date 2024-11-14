@@ -47,6 +47,10 @@ const getRandomFailureMessage = () => {
   return failureMessages[Math.floor(Math.random() * failureMessages.length)];
 };
 
+const resetSearchInput = () => {
+  document.querySelector('[name="search"]').value = '';
+};
+
 function App() {
   const goalScore = 20000;
   const [answersData, setAnswersData] = useState(rawAnswersData);
@@ -67,6 +71,7 @@ function App() {
         html: `<strong>${window.aftercheck.message}</strong>`,
     });
 
+      resetSearchInput();
       return;
     }
     delete window.aftercheck;
@@ -93,6 +98,7 @@ function App() {
       return answer;
     });
 
+    resetSearchInput();
     setAnswersData(updatedAnswersData);
     toastStyle.fire({
       icon: hasFoundNewAnswer ? "success" : "error",

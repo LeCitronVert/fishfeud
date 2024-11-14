@@ -85,7 +85,7 @@
         },
         "aftercheck": {
             "condition": "citro",
-            "message": "No ! I knew you'd do that ! >:["
+            "message": "No ! I knew you'd do that ! >:("
         },
         "found": false
     }
