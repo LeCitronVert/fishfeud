@@ -11,6 +11,42 @@ import withReactContent from 'sweetalert2-react-content'
 
 import "@sweetalert2/theme-dark/dark.css"
 
+const toastStyle = Swal.mixin({
+  toast: true,
+  position: "top-end",
+  showConfirmButton: false,
+  timer: 3000,
+  timerProgressBar: true,
+});
+
+const getRandomSuccessMessage = () => {
+  const successMessages = [
+    'yay :)',
+    'yippers !!',
+    'goojob !!!',
+    'woawn :o',
+    'so cool ...',
+    'hihi',
+    'nice >:)',
+  ];
+
+  return successMessages[Math.floor(Math.random() * successMessages.length)];
+};
+
+const getRandomFailureMessage = () => {
+  const failureMessages = [
+    'naur :(',
+    'oh boy.',
+    'not really poazkpoazkdp',
+    'nahhhh',
+    'not quite.',
+    'it would seem that this answer is incorrect, birthday boy',
+    'o',
+  ];
+
+  return failureMessages[Math.floor(Math.random() * failureMessages.length)];
+};
+
 function App() {
   const goalScore = 20000;
   const [answersData, setAnswersData] = useState(rawAnswersData);
@@ -30,10 +66,14 @@ function App() {
         title: '>:[',
         html: `<strong>${window.aftercheck.message}</strong>`,
     });
+
+      return;
     }
     delete window.aftercheck;
 
-    let updatedAnswersData = Array.from(answersData);
+    let updatedAnswersData = Array.from(answersData)
+    
+    let hasFoundNewAnswer = false;
     updatedAnswersData.map((answer) => {
       if (answer.found) {
         return answer;
@@ -47,12 +87,17 @@ function App() {
         || alternatives.some((alternative => alternative.trim().toLowerCase() === searchValue))
       ) {
         answer.found = true;
+        hasFoundNewAnswer = true;
       }
 
       return answer;
     });
 
     setAnswersData(updatedAnswersData);
+    toastStyle.fire({
+      icon: hasFoundNewAnswer ? "success" : "error",
+      title: hasFoundNewAnswer ? getRandomSuccessMessage() : getRandomFailureMessage(),
+    });
   };
   
   let currentScore = 0;
