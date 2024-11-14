@@ -16,3 +16,44 @@ main {
     text-align: center;
     gap: 20px;
 }
+
+.answers-list {
+    display: grid;
+    grid-template-columns: repeat(2, 200px);
+}
+
+.answer-item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+
+    .score {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        transition: left 0.75s ease-out;
+
+        background-color: #5782a3;
+        color: #dbad77;
+        font-weight: bolder;
+    }
+
+    .answer {
+        width: 100%;
+
+        background-color: #dbad77;
+        color: white;
+        -webkit-text-stroke: 1px black;
+        
+        text-transform: uppercase;
+    }
+
+    &.answer-found .score {
+        left: -200px;
+    }
+}

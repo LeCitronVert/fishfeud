@@ -23,8 +23,8 @@ const Answer = ({answer}) => {
 
     return (
         <div className={className} onClick={clickHandler}>
-            <span>{answer.score}</span>
-            <span>{answer.answer}</span>
+            <span className='score'>{answer.score}</span>
+            <span className='answer'>{answer.answer}</span>
         </div>
     );
 }
