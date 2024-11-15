@@ -12,6 +12,8 @@ import withReactContent from 'sweetalert2-react-content'
 import "@sweetalert2/theme-dark/dark.css";
 import AllClear from '../components/AllClear';
 
+import bestiesUrl from '/besties.png';
+
 const toastStyle = Swal.mixin({
   toast: true,
   position: "top-end",
@@ -62,7 +64,7 @@ function App() {
   if (isRewardUnlocked) {
     return (
       <main>
-        <img src='public/besties.png' />
+        <img src={bestiesUrl} />
 
         <p>
           You can now head to discord and read the spoilered message. Well played ! :)
