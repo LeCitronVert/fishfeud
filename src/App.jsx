@@ -6,10 +6,11 @@ import Reward from '../components/Reward';
 import rawAnswersData from './assets/answers.json';
 import Score from '../components/Score';
 
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2/src/sweetalert2.js"
 import withReactContent from 'sweetalert2-react-content'
 
-import "@sweetalert2/theme-dark/dark.css"
+import "@sweetalert2/theme-dark/dark.css";
+import AllClear from '../components/AllClear';
 
 const toastStyle = Swal.mixin({
   toast: true,
@@ -54,6 +55,21 @@ const resetSearchInput = () => {
 function App() {
   const goalScore = 20000;
   const [answersData, setAnswersData] = useState(rawAnswersData);
+  const [isRewardUnlocked, setRewardUnlocked] = useState(false);
+  // Too lazy to calculate it myself lmao
+  const maxScore = rawAnswersData.reduce((cumul, current,) => Number(cumul) + Number(current.score), 0);
+
+  if (isRewardUnlocked) {
+    return (
+      <main>
+        <img src='public/besties.png' />
+
+        <p>
+          You can now head to discord and read the spoilered message. Well played ! :)
+        </p>
+      </main>
+    );
+  }
 
   const formSubmitHandler = (event) => {
     event.preventDefault();
@@ -119,7 +135,8 @@ function App() {
       <Score score={currentScore} goalScore={goalScore} />
       <Form formSubmitHandler={formSubmitHandler} />
       <Answers answers={answersData} />
-      <Reward currentScore={currentScore} goalScore={goalScore} />
+      <Reward currentScore={currentScore} goalScore={goalScore} onButtonClicked={() => {setRewardUnlocked(true)}} />
+      <AllClear currentScore={currentScore} maxScore={maxScore} />
     </main>
   )
 }

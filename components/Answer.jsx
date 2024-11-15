@@ -1,5 +1,6 @@
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2/src/sweetalert2.js"
 import withReactContent from 'sweetalert2-react-content'
+import "@sweetalert2/theme-dark/dark.css";
 
 const Answer = ({answer}) => {
     const className = 'answer-item' + (answer.found ? ' answer-found' : '');

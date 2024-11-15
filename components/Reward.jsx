@@ -1,4 +1,4 @@
-const Reward = ({currentScore, goalScore}) => {
+const Reward = ({currentScore, goalScore, onButtonClicked}) => {
     if (goalScore > currentScore) {
         return (
             <button disabled>Not available yet ! You need {goalScore - currentScore} more points !</button>
@@ -6,7 +6,7 @@ const Reward = ({currentScore, goalScore}) => {
     }
 
     return (
-        <button>Get reward !!</button>
+        <button onClick={onButtonClicked}>Get reward !!</button>
     )
 };
 
